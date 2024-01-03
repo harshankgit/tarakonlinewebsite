@@ -1,0 +1,1427 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarak Onlie Home Page</title>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 30px;
+            font-weight: 900;
+            background: linear-gradient(to right, rgb(208, 220, 236), rgb(245, 245, 164), rgb(112, 240, 235));
+            color: transparent;
+            -webkit-background-clip: text;
+
+            padding: 0 20px;
+        }
+
+        .backc {
+            background: linear-gradient(to right, #a00b00, black, #a00b00);
+            color: transparent;
+            -webkit-background-clip: text;
+        }
+
+        header {
+            background-color: #a00b00;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+        }
+
+        header img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+            /* animation: rotate 2s linear infinite; */
+            /* Rotate animation */
+        }
+
+
+
+
+        header h1 {
+            margin: 0;
+
+        }
+
+        header h1:hover {
+            color: cyan;
+            cursor: pointer;
+        }
+
+        nav {
+            background-color: #860f04;
+            padding: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+
+        }
+
+        nav a {
+            color: #333;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            color: white;
+        }
+
+        nav a:hover {
+            background-color: #a00b00;
+        }
+
+        .banner {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            border-radius: 8px;
+        }
+
+        .banner img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .product-container {
+            display: inline-block;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin: 20px;
+        }
+
+        .product-card {
+            width: 170px;
+            margin: 15px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .product-card:hover {
+            transform: scale(1.05);
+        }
+
+        .product-image {
+            width: 100%;
+            max-height: 170px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .product-details {
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        header img {
+            border-radius: 50%;
+        }
+
+        .slider {
+            display: flex;
+            width: 300%;
+            /* 100% * number of slides */
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            width: 100%;
+            flex: 0 0 100%;
+            box-sizing: border-box;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Optional: Add navigation buttons */
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        /* Optional: Add styling to the navigation buttons on hover */
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .advertisement {
+            background-color: #f8f8f8;
+            text-align: center;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .advertisement img {
+            width: 100%;
+            max-height: 200px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        /* Animation for product card */
+        @keyframes scaleUp {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .product-card {
+            /* ... Your existing styles ... */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Animation for advertisement */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .advertisement {
+            animation: fadeIn 1s ease;
+        }
+
+
+        #head1 {
+            border-bottom: 1px solid white;
+            background-color: #860f04;
+        }
+
+        #head1 div a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .left-side {
+            flex-grow: 1;
+            text-align: start;
+        }
+
+
+        .footer {
+            background-color: #a00b00;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            margin: 0 10px;
+            width: 50px;
+            /* Adjust the size as needed */
+            height: 50px;
+            /* Adjust the size as needed */
+            object-fit: cover;
+        }
+
+        .footer-details {
+            line-height: 1.5;
+        }
+
+        .extended-delivery-bar {
+            background-color: #a00b00;
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+            margin-bottom: 50px;
+            width: 98%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .partition {
+            flex: 1;
+        }
+
+        .delivery-options,
+        .contact-info {
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        .delivery-options {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .option {
+            color: #fff;
+            text-decoration: none;
+            padding: 8px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .option:hover {
+            background-color: #a49594;
+        }
+
+        .contact-info {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            animation: slideIn 1s forwards;
+        }
+
+        .contact-icon {
+            margin-right: 5px;
+        }
+
+
+
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            margin: 0 10px;
+            width: 50px;
+            /* Adjust the size as needed */
+            height: 50px;
+            /* Adjust the size as needed */
+            object-fit: cover;
+        }
+
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(20px);
+            }
+
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        .brand-section {
+            text-align: center;
+            padding: 50px;
+        }
+
+
+        .brand-heading {
+            font-size: 2em;
+            margin-bottom: 20px;
+
+        }
+
+
+
+        .brand-box {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .brand-item {
+            width: 100px;
+            height: 100px;
+            overflow: hidden;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .brand-item:hover {
+            transform: scale(1.1);
+        }
+
+        .brand-logo {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+
+
+        * {
+            box-sizing: border-box
+        }
+
+        /* Slideshow container */
+        .slideshow-container {
+            max-width: 100%;
+            position: relative;
+
+        }
+
+        /* Hide the images by default */
+        .mySlides {
+            display: none;
+        }
+
+        /* Next & previous buttons */
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            margin-top: -22px;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+
+        /* Position the "next button" to the right */
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        /* On hover, add a black background color with a little bit see-through */
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        /* Caption text */
+        .text {
+            color: #f2f2f2;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Number text (1/3 etc) */
+        .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
+
+        /* The dots/bullets/indicators */
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active,
+        .dot:hover {
+            background-color: #717171;
+        }
+
+        /* Fading animation */
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @keyframes fade {
+            from {
+                opacity: .4
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        .banner img {
+            height: 300px;
+        }
+
+        header #cen {
+
+            text-align: center;
+
+        }
+
+        #product-bar {
+            display: flex;
+            overflow-x: auto;
+            padding: 1em;
+            background-color: #ddd;
+            margin-bottom: 10px;
+        }
+
+        .product {
+            border: 1px solid #ddd;
+            padding: 1em;
+            margin-right: 1em;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .cart {
+            position: fixed;
+            top: 0;
+            right: -300px;
+            /* Initially off-screen */
+            width: 300px;
+            padding: 1em;
+            background-color: #333;
+            color: #fff;
+            transition: right 0.3s ease;
+            /* Smooth transition */
+        }
+
+        .search-container {
+            position: relative;
+        }
+
+        .search-input {
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            width: 140px;
+            transition: width 0.3s ease-in-out;
+            background-color: #fff;
+        }
+
+        .search-input:focus {
+            width: 300px;
+        }
+
+        .search-icon {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+
+        .search-icon img {
+            width: 20px;
+            height: 20px;
+        }
+
+        #logo1 {
+            width: 286px;
+            height: 101px;
+            margin: -10px;
+        }
+
+        .brand-logo {
+            background-color: black;
+        }
+
+        .product-card .product-image {
+            height: 200px;
+
+        }
+
+        #slider-container {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        #slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+
+        .controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .control-btn {
+            background: #333;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .slide img {
+            height: 250px;
+            width: 100%;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header id="head1">
+        <div class="left-side">
+            <span>Customer Number: +91 987-9832-666</span>
+        </div>
+        <div>
+            <a href="#signup">Sign Up</a>
+            <a href="#login">Login</a>
+            <a href="#customer-support">Customer Support</a>
+        </div>
+    </header>
+
+    <header>
+        <img src="Tarak onlne.png" alt="Company Logo" id="logo1">
+
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="Search...">
+            <div class="search-icon">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS47eyw2humzx9RncP14BvYITWyVrrIV-HWLQ&usqp=CAU"
+                    alt="Search Icon">
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <a href="#">Electronics</a>
+        <a href="#">Fashion</a>
+        <a href="#">Books</a>
+        <a href="#">Home & Furniture</a>
+        <!-- Add more categories as needed -->
+    </nav>
+
+    <div id="slider-container">
+        <div id="slider">
+            <div class="slide"><img src="happy.png" alt="Image 1"></div>
+            <div class="slide"><img src="logo3.png" alt="Image 2"></div>
+            <div class="slide"><img src="happy.png" alt="Image 3"></div>
+        </div>
+        <div class="controls">
+            <button class="control-btn" onclick="prevSlide()">❮</button>
+            <button class="control-btn" onclick="nextSlide()">❯</button>
+        </div>
+    </div>
+
+    <div class="advertisement">
+        <img src="https://tarakonline.com/upload/OfferImage/Website_img/959websidwre.jpg" alt="Advertisement Image">
+        <p>Check out our special offers!</p>
+    </div>
+
+
+
+
+
+    <header>
+        <h1 id="cen">Start Shoping</h1>
+    </header>
+
+
+    <div id="product-bar">
+
+
+
+
+
+
+
+
+        <div class="product-container">
+            <div class="product-card">
+                <img class="product-image" src="product1.jpg">
+                <div class="product-details">
+                    <h3>Dress For Women</h3>
+                    <a href="https://tarakonline.com/143689/details/rangmaya-knee-length-dress-for-women/1249008">
+                        <p>Get UPTO 50% OFF</p>
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="product-container">
+            <div class="product-card">
+                <img class="product-image" src="product2.jpeg">
+                <div class="product-details">
+                    <h3>Dress For Women</h3>
+                    <a href="https://tarakonline.com/list-products/9eg7f19bao12clg0kmss/women/kurtas-suits">
+                        <p>Get UPTO 50% OFF</p>
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="product-container">
+            <div class="product-card">
+                <img class="product-image" src="product7.jpeg">
+                <div class="product-details">
+                    <h3>Impex T-Shirt For Women</h3>
+                    <a href="https://tarakonline.com/list-products/0vl4qyqpevzwo4nmfnkt/women/t-shirts">
+                        <p>Get UPTO 50% OFF</p>
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="product-container">
+            <div class="product-card">
+                <img class="product-image" src="product4.jpeg" alt="Product Image">
+                <div class="product-details">
+                    <h3>Whether Shirt For Men</h3>
+                    <a href="https://tarakonline.com/144136/details/whether-shirt-for-men/1249929">
+                        <p>Get UPTO 50% OFF</p>
+                    </a>
+
+                </div>
+            </div>
+
+
+
+        </div>
+        <div class="product-container">
+            <div class="product-card">
+                <img class="product-image" src="product5.jpeg" alt="Product Image">
+                <div class="product-details">
+                    <h3>Calcetto Sport Shoes For Men</h3>
+                    <a href="https://tarakonline.com/list-products/0enqxsqrlnrip0vkbwlo/men/sports-shoes">
+                        <p>Get UPTO 50% OFF</p>
+                    </a>
+
+                </div>
+            </div>
+
+
+
+        </div>
+        <div class="product-container">
+            <div class="product-card">
+                <img class="product-image" src="product6.jpg">
+                <div class="product-details">
+                    <h3>Jimmy Jeans For Men</h3>
+                    <a href="https://tarakonline.com/140519/details/jimmy-jordan-jeans-for-men/1240551">
+                        <p>Get UPTO 50% OFF</p>
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="product-container">
+            <div class="product-card">
+                <img class="product-image" src="product1.jpg">
+                <div class="product-details">
+                    <h3>Dress For Women</h3>
+                    <a href="https://tarakonline.com/143689/details/rangmaya-knee-length-dress-for-women/1249008">
+                        <p>Get UPTO 50% OFF</p>
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="product-container">
+            <div class="product-card">
+                <img class="product-image" src="product2.jpeg">
+                <div class="product-details">
+                    <h3>Dress For Women</h3>
+                    <a href="https://tarakonline.com/list-products/9eg7f19bao12clg0kmss/women/kurtas-suits">
+                        <p>Get UPTO 50% OFF</p>
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="product-container">
+            <div class="product-card">
+                <img class="product-image" src="product7.jpeg">
+                <div class="product-details">
+                    <h3>Impex T-Shirt For Women</h3>
+                    <a href="https://tarakonline.com/list-products/0vl4qyqpevzwo4nmfnkt/women/t-shirts">
+                        <p>Get UPTO 50% OFF</p>
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="product-container">
+            <div class="product-card">
+                <img class="product-image" src="product4.jpeg" alt="Product Image">
+                <div class="product-details">
+                    <h3>Whether Shirt For Men</h3>
+                    <a href="https://tarakonline.com/144136/details/whether-shirt-for-men/1249929">
+                        <p>Get UPTO 50% OFF</p>
+                    </a>
+
+                </div>
+            </div>
+
+
+
+        </div>
+        <div class="product-container">
+            <div class="product-card">
+                <img class="product-image" src="product5.jpeg" alt="Product Image">
+                <div class="product-details">
+                    <h3>Calcetto Sport Shoes For Men</h3>
+                    <a href="https://tarakonline.com/list-products/0enqxsqrlnrip0vkbwlo/men/sports-shoes">
+                        <p>Get UPTO 50% OFF</p>
+                    </a>
+
+                </div>
+            </div>
+
+
+
+        </div>
+        <div class="product-container">
+            <div class="product-card">
+                <img class="product-image" src="product6.jpg">
+                <div class="product-details">
+                    <h3>Jimmy Jeans For Men</h3>
+                    <a href="https://tarakonline.com/140519/details/jimmy-jordan-jeans-for-men/1240551">
+                        <p>Get UPTO 50% OFF</p>
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+    <div id="product-bar">
+        <div class="product-container">
+            <div class="product-card">
+                <img class="product-image" src="product15.jpeg">
+                <div class="product-details">
+                    <h3>Cotton Jeans For Boys</h3>
+                    <a href="https://tarakonline.com/143689/details/rangmaya-knee-length-dress-for-women/1249008">
+                        <p>Get UPTO 50% OFF</p>
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="product-container">
+            <div class="product-card">
+                <img class="product-image" src="product16.jpeg">
+                <div class="product-details">
+                    <h3>Dress For Women</h3>
+                    <a href="https://tarakonline.com/list-products/9eg7f19bao12clg0kmss/women/kurtas-suits">
+                        <p>Get UPTO 50% OFF</p>
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="product-container">
+            <div class="product-card">
+                <img class="product-image" src="product17.jpg">
+                <div class="product-details">
+                    <h3>Kids Jeans For Boys</h3>
+                    <a href="https://tarakonline.com/list-products/0vl4qyqpevzwo4nmfnkt/women/t-shirts">
+                        <p>Get UPTO 50% OFF</p>
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="product-container">
+            <div class="product-card">
+                <img class="product-image" src="product18.jpg" alt="Product Image">
+                <div class="product-details">
+                    <h3> Cotton Jeans For Boys</h3>
+                    <a href="https://tarakonline.com/144136/details/whether-shirt-for-men/1249929">
+                        <p>Get UPTO 50% OFF</p>
+                    </a>
+
+                </div>
+            </div>
+
+
+
+        </div>
+        <div class="product-container">
+            <div class="product-card">
+                <img class="product-image" src="product19.jpg" alt="Product Image">
+                <div class="product-details">
+                    <h3>Bottom Jeans For Boys</h3>
+                    <a href="https://tarakonline.com/list-products/0enqxsqrlnrip0vkbwlo/men/sports-shoes">
+                        <p>Get UPTO 50% OFF</p>
+                    </a>
+
+                </div>
+            </div>
+
+
+
+        </div>
+        <div class="product-container">
+            <div class="product-card">
+                <img class="product-image" src="product20.jpg">
+                <div class="product-details">
+                    <h3>Jimmy Jeans For Men</h3>
+                    <a href="https://tarakonline.com/140519/details/jimmy-jordan-jeans-for-men/1240551">
+                        <p>Get UPTO 50% OFF</p>
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="product-container">
+            <div class="product-card">
+                <img class="product-image" src="product1.jpg">
+                <div class="product-details">
+                    <h3>Dress For Women</h3>
+                    <a href="https://tarakonline.com/143689/details/rangmaya-knee-length-dress-for-women/1249008">
+                        <p>Get UPTO 50% OFF</p>
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="product-container">
+            <div class="product-card">
+                <img class="product-image" src="product2.jpeg">
+                <div class="product-details">
+                    <h3>Dress For Women</h3>
+                    <a href="https://tarakonline.com/list-products/9eg7f19bao12clg0kmss/women/kurtas-suits">
+                        <p>Get UPTO 50% OFF</p>
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="product-container">
+            <div class="product-card">
+                <img class="product-image" src="product7.jpeg">
+                <div class="product-details">
+                    <h3>Impex T-Shirt For Women</h3>
+                    <a href="https://tarakonline.com/list-products/0vl4qyqpevzwo4nmfnkt/women/t-shirts">
+                        <p>Get UPTO 50% OFF</p>
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="product-container">
+            <div class="product-card">
+                <img class="product-image" src="product4.jpeg" alt="Product Image">
+                <div class="product-details">
+                    <h3>Whether Shirt For Men</h3>
+                    <a href="https://tarakonline.com/144136/details/whether-shirt-for-men/1249929">
+                        <p>Get UPTO 50% OFF</p>
+                    </a>
+
+                </div>
+            </div>
+
+
+
+        </div>
+        <div class="product-container">
+            <div class="product-card">
+                <img class="product-image" src="product5.jpeg" alt="Product Image">
+                <div class="product-details">
+                    <h3>Calcetto Sport Shoes For Men</h3>
+                    <a href="https://tarakonline.com/list-products/0enqxsqrlnrip0vkbwlo/men/sports-shoes">
+                        <p>Get UPTO 50% OFF</p>
+                    </a>
+
+                </div>
+            </div>
+
+
+
+        </div>
+        <div class="product-container">
+            <div class="product-card">
+                <img class="product-image" src="product6.jpg">
+                <div class="product-details">
+                    <h3>Jimmy Jeans For Men</h3>
+                    <a href="https://tarakonline.com/140519/details/jimmy-jordan-jeans-for-men/1240551">
+                        <p>Get UPTO 50% OFF</p>
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+    <div class="extended-delivery-bar">
+        <div class="partition">
+            <div class="delivery-options">
+                <a href="#" class="option">Free Shipping</a>
+                <a href="#" class="option">30-Day Return</a>
+                <!-- Add more options as needed -->
+            </div>
+        </div>
+        <div class="partition">
+            <div class="delivery-options">
+                <a href="#" class="option">Cash on Delivery</a>
+                <a href="#" class="option">Secure Payments</a>
+                <!-- Add more options as needed -->
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <div id="product-bar">
+
+        <div class="product-container">
+            <div class="product-card">
+                <img class="product-image" src="product21.jpg" alt="Product Image">
+                <div class="product-details">
+                    <h3> Latest Jeans For Men</h3>
+                    <a href="https://tarakonline.com/list-products/0enqxsqrlnrip0vkbwlo/men/sports-shoes">
+                        <p>Get UPTO 50% OFF</p>
+                    </a>
+
+                </div>
+            </div>
+
+
+
+        </div>
+        <div class="product-container">
+            <div class="product-card">
+                <img class="product-image" src="product22.jpg" alt="Product Image">
+                <div class="product-details">
+                    <h3>Heels Mules For Women</h3>
+                    <a href="https://tarakonline.com/list-products/j3hpqi3eqvacvlvgzy60/women/mojaris">
+                        <p>Get UPTO 50% OFF</p>
+                    </a>
+
+                </div>
+            </div>
+
+
+
+        </div>
+        <div class="product-container">
+            <div class="product-card">
+                <img class="product-image" src="product23.jpg" alt="Product Image">
+                <div class="product-details">
+                    <h3>Ostro Block For Women</h3>
+                    <a href="https://tarakonline.com/list-products/j3hpqi3eqvacvlvgzy60/women/mojaris">
+                        <p>Get UPTO 50% OFF</p>
+                    </a>
+                </div>
+            </div>
+
+
+
+        </div>
+        <div class="product-container">
+            <div class="product-card">
+                <img class="product-image" src="product24.jpg" alt="Product Image">
+                <div class="product-details">
+                    <h3>Block Heels Mules Women</h3>
+                    <a href="https://tarakonline.com/list-products/j3hpqi3eqvacvlvgzy60/women/mojaris">
+                        <p>Get UPTO 50% OFF</p>
+                    </a>
+                </div>
+            </div>
+
+
+
+        </div>
+        <div class="product-container">
+            <div class="product-card">
+                <img class="product-image" src="product25.jpg" alt="Product Image">
+                <div class="product-details">
+                    <h3>Ostro Mules For Women</h3>
+                    <a href="https://tarakonline.com/list-products/j3hpqi3eqvacvlvgzy60/women/mojaris">
+                        <p>Get UPTO 50% OFF</p>
+                    </a>
+                </div>
+            </div>
+
+
+
+        </div>
+
+        <div class="product-container">
+            <div class="product-card">
+                <img class="product-image" src="product23.jpg" alt="Product Image">
+                <div class="product-details">
+                    <h3>Ostro Block For Women</h3>
+                    <a href="https://tarakonline.com/list-products/j3hpqi3eqvacvlvgzy60/women/mojaris">
+                        <p>Get UPTO 50% OFF</p>
+                    </a>
+                </div>
+            </div>
+
+
+
+        </div>
+
+        <div class="product-container">
+            <div class="product-card">
+                <img class="product-image" src="product1.jpg">
+                <div class="product-details">
+                    <h3>Dress For Women</h3>
+                    <a href="https://tarakonline.com/143689/details/rangmaya-knee-length-dress-for-women/1249008">
+                        <p>Get UPTO 50% OFF</p>
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <header>
+        <h1 id="cen">Best Offers Shoes</h1>
+
+    </header>
+
+    <div id="product-bar">
+        <div class="product-container">
+            <div class="product-card">
+                <img class="product-image" src="product13.jpg" alt="Product Image">
+                <div class="product-details">
+                    <h3>Sport Shoes For Men</h3>
+                    <a href="https://tarakonline.com/list-products/0enqxsqrlnrip0vkbwlo/men/sports-shoes">
+                        <p>Get UPTO 50% OFF</p>
+                    </a>
+                </div>
+            </div>
+
+
+
+        </div>
+        <div class="product-container">
+            <div class="product-card">
+                <img class="product-image" src="product12.jpg" alt="Product Image">
+                <div class="product-details">
+                    <h3>Calcetto Sport Shoes For Men</h3>
+                    <a href="https://tarakonline.com/list-products/0enqxsqrlnrip0vkbwlo/men/sports-shoes">
+                        <p>Get UPTO 50% OFF</p>
+                    </a>
+                </div>
+            </div>
+
+
+
+        </div>
+        <div class="product-container">
+            <div class="product-card">
+                <img class="product-image" src="product11.jpg" alt="Product Image">
+                <div class="product-details">
+                    <h3>Sport Shoes For Men</h3>
+                    <a href="https://tarakonline.com/list-products/0enqxsqrlnrip0vkbwlo/men/sports-shoes">
+                        <p>Get UPTO 50% OFF</p>
+                    </a>
+                </div>
+            </div>
+
+
+
+        </div>
+
+        <div class="product-container">
+            <div class="product-card">
+                <img class="product-image" src="product5.jpeg" alt="Product Image">
+                <div class="product-details">
+                    <h3>Calcetto Sport Shoes For Men</h3>
+                    <a href="https://tarakonline.com/list-products/0enqxsqrlnrip0vkbwlo/men/sports-shoes">
+                        <a href="https://tarakonline.com/list-products/0enqxsqrlnrip0vkbwlo/men/sports-shoes">
+                            <p>Get UPTO 50% OFF</p>
+                        </a>
+                    </a>
+
+                </div>
+            </div>
+
+
+
+        </div>
+        <div class="product-container">
+            <div class="product-card">
+                <img class="product-image" src="product10.jpg" alt="Product Image">
+                <div class="product-details">
+                    <h3>Sport Shoes For Men</h3>
+                    <a href="https://tarakonline.com/list-products/0enqxsqrlnrip0vkbwlo/men/sports-shoes">
+                        <p>Get UPTO 50% OFF</p>
+                    </a>
+                </div>
+            </div>
+
+
+
+        </div>
+        <div class="product-container">
+            <div class="product-card">
+                <img class="product-image" src="product14.jpg" alt="Product Image">
+                <div class="product-details">
+                    <h3>Sport Shoes For Men</h3>
+                    <a href="https://tarakonline.com/list-products/0enqxsqrlnrip0vkbwlo/men/sports-shoes">
+                        <p>Get UPTO 50% OFF</p>
+                    </a>
+
+                </div>
+            </div>
+
+
+
+        </div>
+        <div class="product-container">
+            <div class="product-card">
+                <img class="product-image" src="product12.jpg" alt="Product Image">
+                <div class="product-details">
+                    <h3>Calcetto Sport Shoes For Men</h3>
+                    <a href="https://tarakonline.com/list-products/0enqxsqrlnrip0vkbwlo/men/sports-shoes">
+                        <p>Get UPTO 50% OFF</p>
+                    </a>
+                </div>
+            </div>
+
+
+
+        </div>
+
+
+
+
+    </div>
+
+
+
+
+
+    <div class="brand-section">
+        <h1 class="brand-heading backc">Shop Your Favorite Brands</h1>
+        <div class="brand-box">
+            <div class="brand-item">
+                <img class="brand-logo"
+                    src="https://yt3.googleusercontent.com/FHQKP9GpufnM1A-xG9w7-sQviy_1e3YEpM1OvBzg9oGklTbnH1nIa_uEvtqfDV0J_R8WS15MkQ=s900-c-k-c0x00ffffff-no-rj"
+                    alt="Brand 1">
+            </div>
+            <!-- <div class="brand-item">
+                    <img class="brand-logo" src="https://images.sportsbrief.com/images/1120/66590ae9702b0eaa.jpeg?v=1"
+                        alt="Brand 2">
+                </div> -->
+            <div class="brand-item">
+                <img class="brand-logo"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrpnz3JRphvgfnnfClHhoqeih-cbhZl6sCvl44UQN_zuk8sBKv1eqOnREtQq_PFa3q9SA&usqp=CAU"
+                    alt="Brand 3">
+            </div>
+            <div class="brand-item">
+                <img class="brand-logo"
+                    src="data:image/jpeg;base64,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"
+                    alt="Brand 4">
+            </div>
+            <!-- <div class="brand-item">
+                    <img class="brand-logo" src="https://cdn.mos.cms.futurecdn.net/U6pd8RiR9VadHncHmPSy7T.jpg"
+                        alt="Brand 5">
+                </div> -->
+            <div class="brand-item">
+                <img class="brand-logo"
+                    src="https://bcassetcdn.com/public/blog/wp-content/uploads/2021/11/10190900/Gucci.png"
+                    alt="Brand 6">
+            </div>
+            <div class="brand-item">
+                <img class="brand-logo"
+                    src="https://bcassetcdn.com/public/blog/wp-content/uploads/2021/11/10190851/Louis-Vuitton-1.png"
+                    alt="Brand 7">
+            </div>
+            <div class="brand-item">
+                <img class="brand-logo"
+                    src="https://static.vecteezy.com/system/resources/previews/020/086/675/original/aada-letter-logo-creative-design-with-graphic-aada-simple-and-modern-logo-vector.jpg"
+                    alt="Brand 8">
+            </div>
+            <div class="brand-item">
+                <img class="brand-logo"
+                    src="data:image/png;base64,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"
+                    alt="Brand 9">
+            </div>
+            <!-- <div class="brand-item">
+                    <img class="brand-logo"
+                        src="https://startupstorymedia.com/wp-content/uploads/2021/10/fastrack-1_11zon.jpg"
+                        alt="Brand 10">
+                </div> -->
+            <!-- Add more brand items as needed -->
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="logo-container">
+            <img class="logo" src="https://static-00.iconduck.com/assets.00/linkedin-icon-2048x2048-ya5g47j2.png"
+                alt="Logo 1">
+            <a href="https://www.instagram.com/spritegenix/"> <img class="logo"
+                    src="https://cdn3.iconfinder.com/data/icons/2018-social-media-logotypes/1000/2018_social_media_popular_app_logo_instagram-512.png"
+                    alt="Logo 2"></a>
+
+            <!-- Add more logos as needed -->
+        </div>
+        <div class="footer-details">
+            <p>&copy; 2023 Tarak Online. All rights reserved.</p>
+            <p>Arbuda Complex,Opp.Saraswati Hospital Deesa-Dhanera Highway Road, Dhanera - 385310.</p>
+            <p>Email: info@tarakonline.com | Phone: +91 987-9832-666</p>
+        </div>
+    </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        let currentIndex = 0;
+        const totalSlides = document.querySelectorAll('.slide').length;
+        const slider = document.getElementById('slider');
+
+        function showSlide(index) {
+            const translateValue = -index * 100 + '%';
+            slider.style.transform = 'translateX(' + translateValue + ')';
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            showSlide(currentIndex);
+        }
+
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+            showSlide(currentIndex);
+        }
+
+        function autoSlide() {
+            nextSlide();
+        }
+
+        setInterval(autoSlide, 5000); // Change slide every 5 seconds
+    </script>
+
+
+
+
+
+
+
+</body>
+
+</html>
